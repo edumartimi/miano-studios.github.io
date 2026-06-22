@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miano Studios</title>
+    <style>
+        /* Variáveis de Cores */
+        :root {
+            --bg-color: #0f0f0f;
+            --primary-color: #855CBB;
+            --text-light: #e0e0e0;
+            --text-dark: #1a1a1a;
+            --card-bg: #1a1a1a;
+        }
+
+        /* Reset e Estilos Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Cabeçalho */
+        header {
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Seção Hero (Apresentação) */
+        .hero {
+            padding: 100px 5%;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+            color: #b0b0b0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #6d4b99;
+            transform: translateY(-2px);
+        }
+
+        /* Seção de Projetos */
+        .projects {
+            padding: 50px 5%;
+        }
+
+        .projects h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid var(--primary-color);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            color: #b0b0b0;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .tags span {
+            background-color: rgba(133, 92, 187, 0.2);
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 50px;
+            border-top: 1px solid #333;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">Miano <span>Studios</span></a>
+        <nav>
+            <a href="#sobre">Sobre</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Criando Experiências</h1>
+        <p>Desenvolvimento de jogos, arquitetura de sistemas interativos e edição de vídeo profissional.</p>
+        <a href="#projetos" class="btn">Ver Portfólio</a>
+    </section>
+
+    <section id="projetos" class="projects">
+        <h2>Projetos em Destaque</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Hyper Mice Rescue</h3>
+                <p>Remake completo em 2D. Focado em mecânicas fluidas, feedbacks visuais precisos e level design dinâmico.</p>
+                <div class="tags">
+                    <span>Unity</span>
+                    <span>C#</span>
+                    <span>LeanTween</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Projeto VS.</h3>
+                <p>Arquitetura de sistemas core para um jogo 2D competitivo focado em embates 1v1 locais.</p>
+                <div class="tags">
+                    <span>Game Design</span>
+                    <span>Multiplayer Local</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Edição e Audiovisual</h3>
+                <p>Manipulação de áudio, corte e pós-produção em projetos de vídeo para clientes comerciais e criativos.</p>
+                <div class="tags">
+                    <span>DaVinci Resolve</span>
+                    <span>Pós-produção</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Miano Studios. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
