@@ -3,209 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miano Studios</title>
+    <title>Miano Studios | Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Variáveis de Cores */
+        /* Customização da Paleta de Cores */
         :root {
-            --bg-color: #0f0f0f;
-            --primary-color: #855CBB;
-            --text-light: #e0e0e0;
-            --text-dark: #1a1a1a;
-            --card-bg: #1a1a1a;
-        }
-
-        /* Reset e Estilos Globais */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --bg-dark: #0f0f0f;
+            --purple-accent: #855CBB;
+            --purple-hover: #6d4b99;
+            --text-gray: #b0b0b0;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-light);
-            line-height: 1.6;
+            background-color: var(--bg-dark);
+            color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        /* Cabeçalho */
-        header {
-            padding: 2rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid var(--primary-color);
+        /* Navbar Customizada */
+        .navbar {
+            background-color: #141414 !important;
+            border-bottom: 2px solid var(--purple-accent);
         }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--text-light);
-            text-decoration: none;
-        }
-
-        .logo span {
-            color: var(--primary-color);
-        }
-
-        nav a {
-            color: var(--text-light);
-            text-decoration: none;
-            margin-left: 2rem;
+        .navbar-brand, .nav-link {
+            color: #ffffff !important;
             transition: color 0.3s;
         }
-
-        nav a:hover {
-            color: var(--primary-color);
+        .nav-link:hover {
+            color: var(--purple-accent) !important;
         }
-
-        /* Seção Hero (Apresentação) */
-        .hero {
-            padding: 100px 5%;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 2rem auto;
-            color: #b0b0b0;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--primary-color);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
+        .nav-link.active {
+            color: var(--purple-accent) !important;
             font-weight: bold;
+        }
+
+        /* Estilização dos Espaços Vazios (Placeholders de Imagem) */
+        .image-placeholder {
+            background-color: #1a1a1a;
+            border: 2px dashed var(--purple-accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 20px;
+            min-height: 200px;
+            transition: border-color 0.3s;
+        }
+        .image-placeholder:hover {
+            border-color: #ffffff;
+        }
+
+        /* Logo Placeholder no Menu */
+        .logo-placeholder {
+            width: 40px;
+            height: 40px;
+            border: 1px dashed var(--purple-accent);
+            background-color: #1a1a1a;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            border-radius: 4px;
+        }
+
+        /* Botões */
+        .btn-purple {
+            background-color: var(--purple-accent);
+            color: white;
+            border: none;
             transition: background 0.3s, transform 0.2s;
         }
-
-        .btn:hover {
-            background-color: #6d4b99;
+        .btn-purple:hover {
+            background-color: var(--purple-hover);
+            color: white;
             transform: translateY(-2px);
         }
 
-        /* Seção de Projetos */
-        .projects {
-            padding: 50px 5%;
+        /* Cards de Projetos */
+        .project-card {
+            background-color: #161616;
+            border: 1px solid #252525;
+            border-top: 4px solid var(--purple-accent);
+            transition: transform 0.3s, border-color 0.3s;
         }
-
-        .projects h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--primary-color);
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border-radius: 8px;
-            padding: 20px;
-            border-left: 4px solid var(--primary-color);
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
+        .project-card:hover {
             transform: translateY(-5px);
+            border-color: var(--purple-accent);
         }
 
-        .card h3 {
-            margin-bottom: 10px;
-            font-size: 1.5rem;
-        }
-
-        .card p {
-            color: #b0b0b0;
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-        }
-
-        .tags span {
-            background-color: rgba(133, 92, 187, 0.2);
-            color: var(--primary-color);
-            padding: 4px 10px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            margin-right: 5px;
-        }
-
-        /* Rodapé */
         footer {
-            text-align: center;
-            padding: 2rem;
-            margin-top: 50px;
-            border-top: 1px solid #333;
-            color: #777;
+            background-color: #0a0a0a;
+            border-top: 1px solid #222;
+            color: #666;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <a href="#" class="logo">Miano <span>Studios</span></a>
-        <nav>
-            <a href="#sobre">Sobre</a>
-            <a href="#projetos">Projetos</a>
-            <a href="#contato">Contato</a>
-        </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <div class="logo-placeholder">LOGO</div>
+                <span>Miano <span style="color: var(--purple-accent);">Studios</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projetos.html">Projetos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="py-5 my-5 text-center container">
+        <div class="row py-lg-5 justify-content-center">
+            <div class="col-lg-8 col-md-10">
+                <h1 class="fw-bold display-4">Inovação e Design Interativo</h1>
+                <p class="lead text-muted my-4">Desenvolvimento independente de jogos, arquitetura de sistemas e produção audiovisual de alto impacto.</p>
+                <a href="projetos.html" class="btn btn-purple btn-lg px-4 me-sm-3">Explorar Projetos</a>
+            </div>
+        </div>
     </header>
 
-    <section class="hero">
-        <h1>Criando Experiências</h1>
-        <p>Desenvolvimento de jogos, arquitetura de sistemas interativos e edição de vídeo profissional.</p>
-        <a href="#projetos" class="btn">Ver Portfólio</a>
-    </section>
+    <main class="container my-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="h3 border-start border-4 ps-3" style="border-color: var(--purple-accent) !important;">Destaques Recentes</h2>
+            <a href="projetos.html" class="text-decoration-none" style="color: var(--purple-accent);">Ver tudo &rarr;</a>
+        </div>
 
-    <section id="projetos" class="projects">
-        <h2>Projetos em Destaque</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Hyper Mice Rescue</h3>
-                <p>Remake completo em 2D. Focado em mecânicas fluidas, feedbacks visuais precisos e level design dinâmico.</p>
-                <div class="tags">
-                    <span>Unity</span>
-                    <span>C#</span>
-                    <span>LeanTween</span>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 project-card text-white p-3">
+                    <div class="image-placeholder card-img-top mb-3">
+                        [Print: Hyper Mice Rescue]
+                    </div>
+                    <div class="card-body p-1">
+                        <h5 class="card-title fw-bold">Hyper Mice Rescue</h5>
+                        <p class="card-text text-muted small">Remake completo em 2D focado em mecânicas precisas e feedbacks visuais fluidos.</p>
+                        <span class="badge bg-dark text-purple border border-secondary">Unity / C#</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="card">
-                <h3>Projeto VS.</h3>
-                <p>Arquitetura de sistemas core para um jogo 2D competitivo focado em embates 1v1 locais.</p>
-                <div class="tags">
-                    <span>Game Design</span>
-                    <span>Multiplayer Local</span>
+            <div class="col-md-4">
+                <div class="card h-100 project-card text-white p-3">
+                    <div class="image-placeholder card-img-top mb-3">
+                        [Print / Arte: Projeto VS.]
+                    </div>
+                    <div class="card-body p-1">
+                        <h5 class="card-title fw-bold">Projeto VS.</h5>
+                        <p class="card-text text-muted small">Desenvolvimento de sistemas core e arquitetura para arenas competitivas locais 1v1.</p>
+                        <span class="badge bg-dark text-purple border border-secondary">Game Design</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="card">
-                <h3>Edição e Audiovisual</h3>
-                <p>Manipulação de áudio, corte e pós-produção em projetos de vídeo para clientes comerciais e criativos.</p>
-                <div class="tags">
-                    <span>DaVinci Resolve</span>
-                    <span>Pós-produção</span>
+            <div class="col-md-4">
+                <div class="card h-100 project-card text-white p-3">
+                    <div class="image-placeholder card-img-top mb-3">
+                        [Thumb: Edição de Vídeo]
+                    </div>
+                    <div class="card-body p-1">
+                        <h5 class="card-title fw-bold">Audiovisual & Edição</h5>
+                        <p class="card-text text-muted small">Pós-produção avançada, cortes dinâmicos e manipulação de áudio profissional.</p>
+                        <span class="badge bg-dark text-purple border border-secondary">DaVinci Resolve</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </main>
 
-    <footer>
-        <p>&copy; 2026 Miano Studios. Todos os direitos reservados.</p>
+    <footer class="text-center py-4 mt-5">
+        <div class="container">
+            <p class="m-0 small">&copy; 2026 Miano Studios. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
