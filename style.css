@@ -1,0 +1,199 @@
+/* =========================================
+   Miano Studios — Stylesheet Global
+   Use este arquivo em todas as páginas do site
+   ========================================= */
+
+:root {
+    --bg-dark: #0f0f0f;
+    --bg-darker: #0a0a0a;
+    --bg-card: #161616;
+    --bg-soft: #1a1a1a;
+    --border-soft: #252525;
+    --purple-accent: #855CBB;
+    --purple-hover: #6d4b99;
+    --purple-soft: rgba(133, 92, 187, 0.12);
+    --text-gray: #b0b0b0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: #f8f9fa;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+}
+
+.text-accent {
+    color: var(--purple-accent);
+}
+
+.link-accent {
+    color: var(--purple-accent);
+    transition: color 0.2s;
+}
+.link-accent:hover {
+    color: #ffffff;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+    background-color: #141414 !important;
+    border-bottom: 2px solid var(--purple-accent);
+}
+.navbar-brand, .nav-link {
+    color: #ffffff !important;
+    transition: color 0.3s;
+}
+.nav-link {
+    font-weight: 500;
+}
+.nav-link:hover {
+    color: var(--purple-accent) !important;
+}
+.nav-link.active {
+    color: var(--purple-accent) !important;
+    font-weight: 700;
+}
+
+.logo-placeholder {
+    width: 40px;
+    height: 40px;
+    border: 1px dashed var(--purple-accent);
+    background-color: var(--bg-soft);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    border-radius: 4px;
+    color: var(--text-gray);
+}
+
+/* ===== Hero ===== */
+.hero {
+    background: radial-gradient(ellipse 80% 50% at 50% -10%, var(--purple-soft), transparent);
+}
+
+.badge-soft {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--purple-accent);
+    color: var(--purple-accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+    background-color: var(--purple-soft);
+}
+
+/* ===== Stats Strip ===== */
+.stats-strip {
+    background-color: var(--bg-darker);
+    border-top: 1px solid var(--border-soft);
+    border-bottom: 1px solid var(--border-soft);
+}
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--purple-accent);
+}
+.stat-label {
+    color: var(--text-gray);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+/* ===== Section Titles ===== */
+.section-title {
+    border-left: 4px solid var(--purple-accent);
+    padding-left: 0.75rem;
+}
+
+/* ===== Image Placeholders ===== */
+.image-placeholder {
+    background-color: var(--bg-soft);
+    border: 2px dashed var(--purple-accent);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 20px;
+    min-height: 200px;
+    transition: border-color 0.3s;
+}
+.image-placeholder:hover {
+    border-color: #ffffff;
+}
+
+/* ===== Buttons ===== */
+.btn-purple {
+    background-color: var(--purple-accent);
+    color: white;
+    border: none;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.2s;
+}
+.btn-purple:hover {
+    background-color: var(--purple-hover);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-outline-purple {
+    background-color: transparent;
+    color: var(--purple-accent);
+    border: 1px solid var(--purple-accent);
+    font-weight: 600;
+    transition: all 0.3s;
+}
+.btn-outline-purple:hover {
+    background-color: var(--purple-accent);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* ===== Cards ===== */
+.project-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-soft);
+    border-top: 4px solid var(--purple-accent);
+    transition: transform 0.3s, border-color 0.3s;
+}
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--purple-accent);
+}
+
+.badge-tech {
+    background-color: var(--bg-dark);
+    color: var(--purple-accent);
+    border: 1px solid var(--border-soft);
+    font-weight: 500;
+}
+
+/* ===== CTA Section ===== */
+.cta-section {
+    background-color: var(--bg-card);
+    border-top: 1px solid var(--border-soft);
+    border-bottom: 1px solid var(--border-soft);
+}
+
+/* ===== Footer ===== */
+footer {
+    background-color: var(--bg-darker);
+    border-top: 1px solid #222;
+    color: #666;
+}
+.social-links a {
+    color: var(--text-gray);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+.social-links a:hover {
+    color: var(--purple-accent);
+}
