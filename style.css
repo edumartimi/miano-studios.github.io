@@ -12,13 +12,18 @@
     --purple-accent: #855CBB;
     --purple-hover: #6d4b99;
     --purple-soft: rgba(133, 92, 187, 0.12);
-    --text-gray: #b0b0b0;
+    --text-gray: #c8c8c8;
 }
 
 body {
     background-color: var(--bg-dark);
     color: #f8f9fa;
     font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Override do Bootstrap — text-muted padrão é escuro demais em fundo preto */
+.text-muted {
+    color: var(--text-gray) !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -189,7 +194,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #f8f9fa;
 }
 .form-control-dark::placeholder {
-    color: #6c6c6c;
+    color: #888888;
 }
 .form-control-dark:focus {
     background-color: var(--bg-soft);
