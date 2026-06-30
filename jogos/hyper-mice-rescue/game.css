@@ -1,6 +1,6 @@
 /* =========================================
    Miano Studios — Página do jogo (Unity WebGL)
-   Adaptado do template padrão do Unity pro tema do site
+   Usa style.css global como base
    ========================================= */
 
 body.game-page {
@@ -8,22 +8,31 @@ body.game-page {
     margin: 0;
     background-color: var(--bg-dark, #0f0f0f);
     color: #f8f9fa;
-    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    min-height: 100vh;
 }
 
-/* ===== Barra superior ===== */
-.game-topbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 5%;
-    background-color: #141414;
-    border-bottom: 2px solid var(--purple-accent, #855CBB);
+/* ===== Header strip do jogo ===== */
+.game-header-strip {
+    background: linear-gradient(180deg, #141414 0%, var(--bg-dark, #0f0f0f) 100%);
+    border-bottom: 1px solid var(--border-soft, #252525);
+    padding-top: 1.5rem;
+}
+
+.game-breadcrumb {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.breadcrumb-sep {
+    color: #444;
+}
+
+.breadcrumb-current {
+    color: var(--purple-accent, #855CBB);
+    font-weight: 600;
 }
 
 .game-back-link {
-    color: #f8f9fa;
+    color: #aaa;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s;
@@ -32,27 +41,72 @@ body.game-page {
     color: var(--purple-accent, #855CBB);
 }
 
-.game-topbar-title {
-    font-weight: 700;
-    font-size: 1.1rem;
+.game-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #f8f9fa;
+    line-height: 1.2;
 }
 
-/* ===== Área do jogo ===== */
+.game-subtitle {
+    font-size: 1rem;
+    max-width: 520px;
+}
+
+/* Meta do jogo (engine / versão / gênero) */
+.game-meta {
+    gap: 2rem !important;
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    border-right: 1px solid var(--border-soft, #252525);
+    padding-right: 1.5rem;
+}
+.meta-item:last-child {
+    border-right: none;
+    padding-right: 0;
+}
+
+.meta-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #666;
+    font-weight: 600;
+}
+.meta-value {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #e8e8e8;
+}
+
+/* ===== Área do canvas ===== */
 .game-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    padding: 3rem 1rem;
-    min-height: calc(100vh - 70px);
+    padding: 3rem 1rem 2.5rem;
+    background-color: var(--bg-dark, #0f0f0f);
 }
 
 .game-hint {
-    margin-top: 1.5rem;
-    color: #b0b0b0;
-    font-size: 0.9rem;
+    margin-top: 1.2rem;
+    color: #666;
+    font-size: 0.82rem;
     text-align: center;
-    max-width: 600px;
+}
+
+.game-hint kbd {
+    background-color: #252525;
+    border: 1px solid #383838;
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 0.78rem;
+    color: #ccc;
+    font-family: inherit;
 }
 
 /* ===== Unity container ===== */
@@ -61,7 +115,7 @@ body.game-page {
     border: 2px solid var(--purple-accent, #855CBB);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 0 40px rgba(133, 92, 187, 0.25);
+    box-shadow: 0 0 60px rgba(133, 92, 187, 0.2), 0 0 0 1px #1a1a1a;
     background: #000;
 }
 #unity-container.unity-mobile {
@@ -131,7 +185,7 @@ body.game-page {
     line-height: 38px;
     font-family: 'Inter', arial, sans-serif;
     font-size: 14px;
-    color: #b0b0b0;
+    color: #555;
 }
 #unity-fullscreen-button {
     cursor: pointer;
@@ -139,12 +193,13 @@ body.game-page {
     width: 38px;
     height: 38px;
     background: url('TemplateData/fullscreen-button.png') no-repeat center;
-    filter: invert(1);
-    opacity: 0.85;
-    transition: opacity 0.2s;
+    filter: invert(0.6);
+    opacity: 0.7;
+    transition: opacity 0.2s, filter 0.2s;
 }
 #unity-fullscreen-button:hover {
     opacity: 1;
+    filter: invert(1);
 }
 #unity-warning {
     position: absolute;
@@ -157,4 +212,60 @@ body.game-page {
     border-radius: 6px;
     display: none;
     z-index: 10;
+}
+
+/* ===== Seção "Sobre o jogo" ===== */
+.game-about-section {
+    background-color: var(--bg-card, #161616);
+    border-top: 1px solid var(--border-soft, #252525);
+    border-bottom: 1px solid var(--border-soft, #252525);
+}
+
+/* ===== Grid de controles ===== */
+.controls-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--border-soft, #252525);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.control-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-soft, #252525);
+    transition: background 0.15s;
+}
+.control-row:last-child {
+    border-bottom: none;
+}
+.control-row:hover {
+    background-color: var(--bg-soft, #1a1a1a);
+}
+
+.control-key {
+    min-width: 140px;
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.control-key kbd {
+    background-color: #252525;
+    border: 1px solid #383838;
+    border-bottom-width: 2px;
+    border-radius: 5px;
+    padding: 2px 8px;
+    font-size: 0.78rem;
+    color: #ddd;
+    font-family: inherit;
+    font-weight: 600;
+}
+
+.control-desc {
+    color: var(--text-gray, #e8e8e8);
+    font-size: 0.9rem;
 }

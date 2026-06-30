@@ -1,133 +1,232 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity Web Player | Hyper mice Definitive edition</title>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miano Studios | Hyper Mice Rescue</title>
+    <meta name="description" content="Jogue Hyper Mice Rescue — o pai rato fugindo da fumaça tóxica em 80 fases frenéticas. Desenvolvido por Miano Studios.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-  </head>
-  <body>
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
+    <!-- CSS global do site -->
+    <link rel="stylesheet" href="../../style.css">
+    <!-- CSS específico da página de jogo -->
+    <link rel="stylesheet" href="game.css">
+</head>
+<body class="game-page">
+
+    <!-- ===== Navbar (idêntica ao index) ===== -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="../../index.html">
+                <img src="../../img/logo.png" alt="Miano Studios" class="navbar-logo">
+                <span>Miano <span class="text-accent">Studios</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="../../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../sobre.html">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../../projetos.html">Projetos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../contato.html">Contato</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-purple btn-sm px-3" href="../../contato.html">Falar comigo</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
-      <div id="unity-warning"> </div>
-      <div id="unity-footer">
-        <div id="unity-logo-title-footer"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Hyper mice Definitive edition</div>
-      </div>
+    </nav>
+
+    <!-- ===== Breadcrumb / título da página ===== -->
+    <div class="game-header-strip">
+        <div class="container">
+            <div class="d-flex align-items-center gap-2 game-breadcrumb">
+                <a href="../../projetos.html" class="game-back-link">← Projetos</a>
+                <span class="breadcrumb-sep">/</span>
+                <span class="breadcrumb-current">Hyper Mice Rescue</span>
+            </div>
+            <div class="row align-items-end mt-3 pb-4">
+                <div class="col-lg-7">
+                    <span class="badge badge-tech mb-2">Unity / C# · Alpha</span>
+                    <h1 class="game-title mb-2">Hyper Mice Rescue</h1>
+                    <p class="game-subtitle text-muted">
+                        Pai rato fugindo da fumaça tóxica — wall-jumps frenéticos, 80 fases contra o relógio e o resgate de toda a família.
+                    </p>
+                </div>
+                <div class="col-lg-5 d-none d-lg-flex justify-content-end gap-3 game-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Engine</span>
+                        <span class="meta-value">Unity 6 · URP</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Versão</span>
+                        <span class="meta-value">1.0 Alpha</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Gênero</span>
+                        <span class="meta-value">Plataforma · Roguelite</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- ===== Canvas Unity ===== -->
+    <div class="game-wrapper">
+        <div id="unity-container" class="unity-desktop">
+            <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
+            <div id="unity-loading-bar">
+                <div id="unity-logo"></div>
+                <div id="unity-progress-bar-empty">
+                    <div id="unity-progress-bar-full"></div>
+                </div>
+            </div>
+            <div id="unity-warning"> </div>
+            <div id="unity-footer">
+                <div id="unity-logo-title-footer"></div>
+                <div id="unity-fullscreen-button"></div>
+                <div id="unity-build-title">Hyper Mice Rescue</div>
+            </div>
+        </div>
+
+        <p class="game-hint">
+            Clique no jogo para ativar os controles · <kbd>F</kbd> para tela cheia · melhor em desktop
+        </p>
+    </div>
+
+    <!-- ===== Seção sobre o jogo ===== -->
+    <section class="game-about-section">
+        <div class="container py-5">
+            <div class="row g-5 align-items-start">
+                <div class="col-lg-6">
+                    <h2 class="h4 section-title mb-4">Sobre o jogo</h2>
+                    <p class="text-muted">
+                        Hyper Mice Rescue é um remake completo de um jogo de 2010. Você controla um pai rato que precisa escapar da fumaça tóxica que sobe — resgatando filhotes espalhados pelas fases — em 80 níveis cronometrados cheios de wall-jumps e obstáculos.
+                    </p>
+                    <p class="text-muted">
+                        O projeto explora sistemas de boost/momentum (<em>modo embrasado</em>), arquitetura de armas via ScriptableObjects e design procedural de fases.
+                    </p>
+                    <div class="d-flex gap-3 mt-4 flex-wrap">
+                        <a href="https://mianostudios.itch.io/" target="_blank" rel="noopener" class="btn btn-purple px-4">
+                            Ver no Itch.io
+                        </a>
+                        <a href="../../projetos.html" class="btn btn-outline-purple px-4">
+                            Outros projetos
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="h4 section-title mb-4">Controles</h2>
+                    <div class="controls-grid">
+                        <div class="control-row">
+                            <span class="control-key"><kbd>W</kbd> / <kbd>↑</kbd></span>
+                            <span class="control-desc">Pular / Wall-jump</span>
+                        </div>
+                        <div class="control-row">
+                            <span class="control-key"><kbd>A</kbd> <kbd>D</kbd> / <kbd>←</kbd> <kbd>→</kbd></span>
+                            <span class="control-desc">Mover</span>
+                        </div>
+                        <div class="control-row">
+                            <span class="control-key"><kbd>Shift</kbd></span>
+                            <span class="control-desc">Boost (modo embrasado)</span>
+                        </div>
+                        <div class="control-row">
+                            <span class="control-key"><kbd>ESC</kbd></span>
+                            <span class="control-desc">Pausar</span>
+                        </div>
+                        <div class="control-row">
+                            <span class="control-key"><kbd>F</kbd></span>
+                            <span class="control-desc">Tela cheia</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Footer (idêntico ao index) ===== -->
+    <footer class="text-center py-4">
+        <div class="container">
+            <div class="d-flex justify-content-center gap-3 mb-3 social-links">
+                <a href="https://github.com/edumartimi" aria-label="GitHub">GitHub</a>
+                <a href="https://mianostudios.itch.io/" aria-label="Itch.io">Itch.io</a>
+                <a href="https://www.linkedin.com/in/eduardo-martimiano/" aria-label="LinkedIn">LinkedIn</a>
+            </div>
+            <p class="m-0 small">&copy; 2026 Miano Studios. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- ===== Unity loader ===== -->
     <script>
-      var canvas = document.querySelector("#unity-canvas");
+        var canvas = document.querySelector("#unity-canvas");
 
-      // Shows a temporary message banner/ribbon for a few seconds, or
-      // a permanent error message on top of the canvas if type=='error'.
-      // If type=='warning', a yellow highlight color is used.
-      // Modify or remove this function to customize the visually presented
-      // way that non-critical warnings and error messages are presented to the
-      // user.
-      function unityShowBanner(msg, type) {
-        var warningBanner = document.querySelector("#unity-warning");
-        function updateBannerVisibility() {
-          warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
-        }
-        var div = document.createElement('div');
-        div.innerHTML = msg;
-        warningBanner.appendChild(div);
-        if (type == 'error') div.style = 'background: red; padding: 10px;';
-        else {
-          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
-          setTimeout(function() {
-            warningBanner.removeChild(div);
+        function unityShowBanner(msg, type) {
+            var warningBanner = document.querySelector("#unity-warning");
+            function updateBannerVisibility() {
+                warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+            }
+            var div = document.createElement('div');
+            div.innerHTML = msg;
+            warningBanner.appendChild(div);
+            if (type == 'error') div.style = 'background: red; padding: 10px;';
+            else {
+                if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
+                setTimeout(function () {
+                    warningBanner.removeChild(div);
+                    updateBannerVisibility();
+                }, 5000);
+            }
             updateBannerVisibility();
-          }, 5000);
         }
-        updateBannerVisibility();
-      }
 
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/HyperMiceDefinitiveOnline.loader.js";
-      var config = {
-        arguments: [],
-        dataUrl: buildUrl + "/HyperMiceDefinitiveOnline.data",
-        frameworkUrl: buildUrl + "/HyperMiceDefinitiveOnline.framework.js",
-        codeUrl: buildUrl + "/HyperMiceDefinitiveOnline.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "Miano studios",
-        productName: "Hyper mice Definitive edition",
-        productVersion: "1.0",
-        showBanner: unityShowBanner,
-        // errorHandler: function(err, url, line) {
-        //    alert("error " + err + " occurred at line " + line);
-        //    // Return 'true' if you handled this error and don't want Unity
-        //    // to process it further, 'false' otherwise.
-        //    return true;
-        // },
-      };
+        var buildUrl = "Build";
+        var loaderUrl = buildUrl + "/HyperMiceDefinitiveOnline.loader.js";
+        var config = {
+            arguments: [],
+            dataUrl: buildUrl + "/HyperMiceDefinitiveOnline.data",
+            frameworkUrl: buildUrl + "/HyperMiceDefinitiveOnline.framework.js",
+            codeUrl: buildUrl + "/HyperMiceDefinitiveOnline.wasm",
+            streamingAssetsUrl: "StreamingAssets",
+            companyName: "Miano studios",
+            productName: "Hyper mice Definitive edition",
+            productVersion: "1.0",
+            showBanner: unityShowBanner,
+        };
 
-      // By default, Unity keeps WebGL canvas render target size matched with
-      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-      // Set this to false if you want to decouple this synchronization from
-      // happening inside the engine, and you would instead like to size up
-      // the canvas DOM size and WebGL render target sizes yourself.
-      // config.matchWebGLToCanvasSize = false;
+        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+            var meta = document.createElement('meta');
+            meta.name = 'viewport';
+            meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+            document.getElementsByTagName('head')[0].appendChild(meta);
+            document.querySelector("#unity-container").className = "unity-mobile";
+            canvas.className = "unity-mobile";
+        } else {
+            canvas.style.width = "960px";
+            canvas.style.height = "600px";
+        }
 
-      // If you would like all file writes inside Unity Application.persistentDataPath
-      // directory to automatically persist so that the contents are remembered when
-      // the user revisits the site the next time, uncomment the following line:
-      // config.autoSyncPersistentDataPath = true;
-      // This autosyncing is currently not the default behavior to avoid regressing
-      // existing user projects that might rely on the earlier manual
-      // JS_FileSystem_Sync() behavior, but in future Unity version, this will be
-      // expected to change.
+        document.querySelector("#unity-loading-bar").style.display = "block";
 
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
-
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
-        document.querySelector("#unity-container").className = "unity-mobile";
-        canvas.className = "unity-mobile";
-
-        // To lower canvas resolution on mobile devices to gain some
-        // performance, uncomment the following line:
-        // config.devicePixelRatio = 1;
-
-
-      } else {
-        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
-      }
-
-      document.querySelector("#unity-loading-bar").style.display = "block";
-
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
-              }).then((unityInstance) => {
+        var script = document.createElement("script");
+        script.src = loaderUrl;
+        script.onload = () => {
+            createUnityInstance(canvas, config, (progress) => {
+                document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
+            }).then((unityInstance) => {
                 document.querySelector("#unity-loading-bar").style.display = "none";
                 document.querySelector("#unity-fullscreen-button").onclick = () => {
-                  unityInstance.SetFullscreen(1);
+                    unityInstance.SetFullscreen(1);
                 };
-
-              }).catch((message) => {
+            }).catch((message) => {
                 alert(message);
-              });
-            };
-
-      document.body.appendChild(script);
-
+            });
+        };
+        document.body.appendChild(script);
     </script>
-  </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
